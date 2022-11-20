@@ -50,14 +50,14 @@ void Print2DArray(int[,] array)
 double[] GetTheArithmeticMean(int[,] array)
 {
     double[] arMean = new double[array.GetLength(1)];
-    for (var i = 0; i < array.GetLength(0); i++)
+    for (var j = 0; j < array.GetLength(1); j++)
     {
         double sum = 0;
-        for (var j = 0; j < array.GetLength(1); j++)
+        for (var i = 0; i < array.GetLength(0); i++)
         {
-            sum += array[j, i];
+            sum += array[i, j];
         }
-        arMean[i] = sum / array.GetLength(1);
+        arMean[j] = sum / array.GetLength(0);
     }
     return arMean;
 }
